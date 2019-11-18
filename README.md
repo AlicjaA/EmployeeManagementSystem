@@ -4,7 +4,7 @@ Employee Management System
 
 Alicja Joanna Anszpergier 195755 
 
-Gustw Beźnicki 210140
+Gustaw Beźnicki 210140
 
 Dobromir Kata 176555
 

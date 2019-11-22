@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import {
-  Link,
-} from 'react-router-dom';
 import { 
   Navbar,
   Nav,
@@ -16,9 +13,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Navbar color="light" light expand="md">
-      <NavbarBrand>
-        <Link to="/">EMS</Link>
-      </NavbarBrand>
+      <NavbarBrand>EMS</NavbarBrand>
       <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>

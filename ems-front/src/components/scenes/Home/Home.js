@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import User from './User';
+import Pagination from './Pagination';
 import usersData from '../../../data/users';
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
                 {users.map((user) => <User key={user.id} {...user} />)}
               </tbody>
             </table>
+            <Pagination />
           </div>
         </div>
         <div className="col-12 col-lg-6 mb-4">

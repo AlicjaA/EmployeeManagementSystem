@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import User from './User';
+import usersData from '../../../data/users';
 
 export default function Home() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    setUsers(usersData);
+  }, []);
+
   return (
     <div className="container pt-4">
       <div className="row">
@@ -15,7 +22,9 @@ export default function Home() {
                   <th scope="col">Last name</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                {users.map((user) => <User key={user.id} {...user} />)}
+              </tbody>
             </table>
           </div>
         </div>

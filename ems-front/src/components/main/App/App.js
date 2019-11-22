@@ -1,46 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {  
   Route, 
   Switch, 
   BrowserRouter,
-  Link,
 } from 'react-router-dom';
-import { 
-  Navbar,
-  Nav,
-  NavbarBrand,
-  NavItem,
-  Collapse,
-  NavbarToggler,
-} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import NavLink from '../App/NavLink';
 import Home from '../../scenes/Home';
+import Header from '../Header';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <BrowserRouter>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand>
-          <Link to="/">EMS</Link>
-        </NavbarBrand>
-        <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
-        <Collapse isOpen={isOpen} navbar>
-        <Nav className="mr-auto" navbar>
-          <NavItem>
-           <NavLink exact to="/aaa">AAA</NavLink>
-          </NavItem>
-          <NavItem>
-           <NavLink exact to="/bbb">BBB</NavLink>
-          </NavItem>
-          <NavItem>
-           <NavLink exact to="/ccc">CCC</NavLink>
-          </NavItem>
-        </Nav>
-        </Collapse>
-      </Navbar>
-
+      <Header />
       <Switch>
         <Route exact path="/" component={Home} />
       </Switch>

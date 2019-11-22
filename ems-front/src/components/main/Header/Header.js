@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { 
+import {
   Navbar,
   Nav,
   NavbarBrand,
@@ -18,7 +18,7 @@ export default function Header() {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink exact to="/aaa">AAA</NavLink>
+            <NavLink exact to="/">Home</NavLink>
           </NavItem>
           <NavItem>
             <NavLink exact to="/bbb">BBB</NavLink>
@@ -29,5 +29,5 @@ export default function Header() {
         </Nav>
       </Collapse>
     </Navbar>
-  )
+  );
 }

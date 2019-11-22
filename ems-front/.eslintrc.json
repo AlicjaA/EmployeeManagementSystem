@@ -1,10 +1,11 @@
 {
     "env": {
         "browser": true,
+        "node": true,
         "es6": true
     },
     "extends": [
-        "eslint:recommended", 
+        "eslint:recommended",
         "airbnb-base"
     ],
     "globals": {
@@ -19,9 +20,31 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "import"
+        "import",
+        "react"
     ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        }
+    },
     "rules": {
+        "camelcase": [
+            0,
+            {
+                "properties": "never"
+            }
+        ],
+        "arrow-parens": [
+            0,
+            "as-needed"
+        ],
+        "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1
     }
 }

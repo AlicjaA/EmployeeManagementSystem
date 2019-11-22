@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import User from './User';
-import Pagination from './Pagination';
 import usersData from '../../../data/users';
 
 export default function Home() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    setUsers(usersData);
+    setUsers(usersData.slice(0, 6));
   }, []);
 
   return (
@@ -27,7 +27,9 @@ export default function Home() {
                 {users.map((user) => <User key={user.id} {...user} />)}
               </tbody>
             </table>
-            <Pagination />
+            <div className="d-flex justify-content-end">
+              <Link to="/employees" className="btn btn-link">View all</Link>
+            </div>
           </div>
         </div>
         <div className="col-12 col-lg-6 mb-4">

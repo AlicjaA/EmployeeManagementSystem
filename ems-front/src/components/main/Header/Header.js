@@ -25,7 +25,7 @@ import NavLink from './NavLink';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Navbar color="light" light expand="md">
+    <Navbar color="white" light expand="md" className="shadow">
       <NavbarBrand>EMS</NavbarBrand>
       <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
       <Collapse isOpen={isOpen} navbar>

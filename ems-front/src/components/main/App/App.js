@@ -13,8 +13,8 @@ import {
   Collapse,
   NavbarToggler,
 } from 'reactstrap';
-import NavLink from '../App/NavLink/NavLink';
 import 'bootstrap/dist/css/bootstrap.css';
+import NavLink from '../App/NavLink';
 import Home from '../../scenes/Home';
 
 function App() {

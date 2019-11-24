@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" targetNamespace="http://www.omg.org/bpmn20">
+    <process isClosed="false" processType="None" name="New Employee Process" id="modelio-4a97fcb6-e001-4123-8a91-af0eec9458de">
+        <laneSet id="modelio-67e5a667-06d8-4d23-8a00-8a61226c450b">
+            <lane name="HR" id="f4fe753a-8ff7-49c8-8458-6841b802a216">
+                <flowNodeRef>modelio-56866118-8ef8-4f80-b3e3-4cd44b0b94dc</flowNodeRef>
+                <flowNodeRef>modelio-30ca5bfd-16f8-4f36-b1b5-a32be225a4aa</flowNodeRef>
+                <flowNodeRef>modelio-5d59b7cb-edcd-4a8d-a035-dff1da8dc11f</flowNodeRef>
+                <flowNodeRef>modelio-0a309e57-f49e-43a6-baa7-e477ffdbe3e3</flowNodeRef>
+                <flowNodeRef>modelio-02ea2c16-a579-4558-b2e8-9576e57a40a0</flowNodeRef>
+                <flowNodeRef>cc351220-17a4-4cd8-9e4d-bd226fc2ca16</flowNodeRef>
+                <flowNodeRef>modelio-6e8d372d-f037-44e8-8d28-d07ad8d4510b</flowNodeRef>
+            </lane>
+            <lane name="Business Unit Manager" id="f4b15724-95b3-43d5-8e1a-3cf2e562b791">
+                <flowNodeRef>modelio-185763d4-ed9d-4751-9176-f62c61c5e3e2</flowNodeRef>
+                <flowNodeRef>ddecba6f-3bd3-4c88-a2ab-40080a683713</flowNodeRef>
+                <flowNodeRef>modelio-0afde822-ec1f-4a59-887c-9247c21f34c2</flowNodeRef>
+                <flowNodeRef>modelio-0c41d9c6-b9ea-4f84-b158-cd976158ba05</flowNodeRef>
+                <flowNodeRef>modelio-37fc1106-37ee-47d1-8658-656c2b43b8fd</flowNodeRef>
+                <flowNodeRef>modelio-8a185abc-5fd4-461f-a4c0-9f6f290e5f1e</flowNodeRef>
+            </lane>
+            <lane name="Employee" id="modelio-52d4091f-7a81-4580-ac44-5e5925ec6e6f">
+                <flowNodeRef>ee1e23bb-de5b-4844-9ded-c6397da741ed</flowNodeRef>
+                <flowNodeRef>modelio-8271ec96-8074-4cfe-aacd-45ddb1c21d50</flowNodeRef>
+                <flowNodeRef>modelio-51f89366-7884-4a33-bced-dee9e40abcaf</flowNodeRef>
+            </lane>
+        </laneSet>
+        <startEvent isInterrupting="true" parallelMultiple="false" name="Hire Employee" id="modelio-56866118-8ef8-4f80-b3e3-4cd44b0b94dc">
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">c7e6bbf5-d74f-4976-ae27-0e6828747d72</ns5:outgoing>
+        </startEvent>
+        <task isForCompensation="false" startQuantity="1" completionQuantity="1" name="Asign personal number" id="modelio-30ca5bfd-16f8-4f36-b1b5-a32be225a4aa">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-6a1294b5-6cf8-489a-884e-7745a58971d3</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-66e39406-aef0-4ac9-b292-b3ae33c329ad</ns5:outgoing>
+        </task>
+        <endEvent name="End" id="ee1e23bb-de5b-4844-9ded-c6397da741ed">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">f4ed5995-e08a-457c-a281-ab905d83fe1d</ns5:incoming>
+        </endEvent>
+        <task isForCompensation="false" startQuantity="1" completionQuantity="1" name="Assign Skills" id="modelio-5d59b7cb-edcd-4a8d-a035-dff1da8dc11f">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-017de478-6b4a-4aae-af65-c6772bca7acd</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-157ff346-36b4-4c80-bb41-fd4444bf9629</ns5:outgoing>
+        </task>
+        <task isForCompensation="false" startQuantity="1" completionQuantity="1" name="Assign Position" id="modelio-0a309e57-f49e-43a6-baa7-e477ffdbe3e3">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-40040347-b464-4c0d-afca-2bd9ccfee1e4</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-53a0e352-fd5c-4112-85ec-69efab10ab2a</ns5:outgoing>
+        </task>
+        <sendTask isForCompensation="false" startQuantity="1" completionQuantity="1" name="Notify Manager" id="modelio-02ea2c16-a579-4558-b2e8-9576e57a40a0">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-97ca2918-328c-475c-b176-59532674338e</ns5:incoming>
+        </sendTask>
+        <inclusiveGateway gatewayDirection="Unspecified" name="Employee Registered" id="cc351220-17a4-4cd8-9e4d-bd226fc2ca16">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-66e39406-aef0-4ac9-b292-b3ae33c329ad</ns5:incoming>
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-157ff346-36b4-4c80-bb41-fd4444bf9629</ns5:incoming>
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-53a0e352-fd5c-4112-85ec-69efab10ab2a</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-97ca2918-328c-475c-b176-59532674338e</ns5:outgoing>
+        </inclusiveGateway>
+        <parallelGateway gatewayDirection="Unspecified" name="Register Employee" id="modelio-6e8d372d-f037-44e8-8d28-d07ad8d4510b">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">c7e6bbf5-d74f-4976-ae27-0e6828747d72</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-6a1294b5-6cf8-489a-884e-7745a58971d3</ns5:outgoing>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-017de478-6b4a-4aae-af65-c6772bca7acd</ns5:outgoing>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-40040347-b464-4c0d-afca-2bd9ccfee1e4</ns5:outgoing>
+        </parallelGateway>
+        <sequenceFlow sourceRef="modelio-56866118-8ef8-4f80-b3e3-4cd44b0b94dc" targetRef="modelio-6e8d372d-f037-44e8-8d28-d07ad8d4510b" name="f" id="c7e6bbf5-d74f-4976-ae27-0e6828747d72"/>
+        <sequenceFlow sourceRef="modelio-6e8d372d-f037-44e8-8d28-d07ad8d4510b" targetRef="modelio-30ca5bfd-16f8-4f36-b1b5-a32be225a4aa" name="f1" id="modelio-6a1294b5-6cf8-489a-884e-7745a58971d3"/>
+        <sequenceFlow sourceRef="modelio-6e8d372d-f037-44e8-8d28-d07ad8d4510b" targetRef="modelio-5d59b7cb-edcd-4a8d-a035-dff1da8dc11f" name="f2" id="modelio-017de478-6b4a-4aae-af65-c6772bca7acd"/>
+        <sequenceFlow sourceRef="modelio-6e8d372d-f037-44e8-8d28-d07ad8d4510b" targetRef="modelio-0a309e57-f49e-43a6-baa7-e477ffdbe3e3" name="f3" id="modelio-40040347-b464-4c0d-afca-2bd9ccfee1e4"/>
+        <sequenceFlow sourceRef="modelio-30ca5bfd-16f8-4f36-b1b5-a32be225a4aa" targetRef="cc351220-17a4-4cd8-9e4d-bd226fc2ca16" name="f4" id="modelio-66e39406-aef0-4ac9-b292-b3ae33c329ad"/>
+        <sequenceFlow sourceRef="modelio-5d59b7cb-edcd-4a8d-a035-dff1da8dc11f" targetRef="cc351220-17a4-4cd8-9e4d-bd226fc2ca16" name="f5" id="modelio-157ff346-36b4-4c80-bb41-fd4444bf9629"/>
+        <sequenceFlow sourceRef="modelio-0a309e57-f49e-43a6-baa7-e477ffdbe3e3" targetRef="cc351220-17a4-4cd8-9e4d-bd226fc2ca16" name="f6" id="modelio-53a0e352-fd5c-4112-85ec-69efab10ab2a"/>
+        <sequenceFlow sourceRef="cc351220-17a4-4cd8-9e4d-bd226fc2ca16" targetRef="modelio-02ea2c16-a579-4558-b2e8-9576e57a40a0" name="f7" id="modelio-97ca2918-328c-475c-b176-59532674338e"/>
+        <receiveTask implementation="##WebService" instantiate="false" isForCompensation="false" startQuantity="1" completionQuantity="1" name="Employee Registration Confirmation" id="modelio-185763d4-ed9d-4751-9176-f62c61c5e3e2">
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-90a20b85-d353-4b38-92f4-93a3c71a0951</ns5:outgoing>
+        </receiveTask>
+        <parallelGateway gatewayDirection="Unspecified" name="Meet with Employee" id="ddecba6f-3bd3-4c88-a2ab-40080a683713">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-90a20b85-d353-4b38-92f4-93a3c71a0951</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-92888a86-e4dc-4d14-8e27-5aa2e289ea42</ns5:outgoing>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">fe8c028a-2493-452c-8a89-f576369b004b</ns5:outgoing>
+        </parallelGateway>
+        <sequenceFlow sourceRef="modelio-185763d4-ed9d-4751-9176-f62c61c5e3e2" targetRef="ddecba6f-3bd3-4c88-a2ab-40080a683713" name="f8" id="modelio-90a20b85-d353-4b38-92f4-93a3c71a0951"/>
+        <task isForCompensation="false" startQuantity="1" completionQuantity="1" name="Make Notes" id="modelio-0afde822-ec1f-4a59-887c-9247c21f34c2">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-92888a86-e4dc-4d14-8e27-5aa2e289ea42</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">cc212148-fa61-4e51-82af-32c368da7e60</ns5:outgoing>
+        </task>
+        <task isForCompensation="false" startQuantity="1" completionQuantity="1" name="Assign Skills" id="modelio-0c41d9c6-b9ea-4f84-b158-cd976158ba05">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">fe8c028a-2493-452c-8a89-f576369b004b</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-2f3ed897-ea7c-4f9a-b55e-43494425335a</ns5:outgoing>
+        </task>
+        <sequenceFlow sourceRef="ddecba6f-3bd3-4c88-a2ab-40080a683713" targetRef="modelio-0afde822-ec1f-4a59-887c-9247c21f34c2" name="f9" id="modelio-92888a86-e4dc-4d14-8e27-5aa2e289ea42"/>
+        <sequenceFlow sourceRef="ddecba6f-3bd3-4c88-a2ab-40080a683713" targetRef="modelio-0c41d9c6-b9ea-4f84-b158-cd976158ba05" name="f10" id="fe8c028a-2493-452c-8a89-f576369b004b"/>
+        <inclusiveGateway gatewayDirection="Unspecified" name="" id="modelio-37fc1106-37ee-47d1-8658-656c2b43b8fd">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">cc212148-fa61-4e51-82af-32c368da7e60</ns5:incoming>
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-2f3ed897-ea7c-4f9a-b55e-43494425335a</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-129a2bdc-fa32-4321-b084-c2253398dcdb</ns5:outgoing>
+        </inclusiveGateway>
+        <sequenceFlow sourceRef="modelio-0afde822-ec1f-4a59-887c-9247c21f34c2" targetRef="modelio-37fc1106-37ee-47d1-8658-656c2b43b8fd" name="f11" id="cc212148-fa61-4e51-82af-32c368da7e60"/>
+        <sequenceFlow sourceRef="modelio-0c41d9c6-b9ea-4f84-b158-cd976158ba05" targetRef="modelio-37fc1106-37ee-47d1-8658-656c2b43b8fd" name="f12" id="modelio-2f3ed897-ea7c-4f9a-b55e-43494425335a"/>
+        <sendTask isForCompensation="false" startQuantity="1" completionQuantity="1" name="Notify Employee" id="modelio-8a185abc-5fd4-461f-a4c0-9f6f290e5f1e">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">modelio-129a2bdc-fa32-4321-b084-c2253398dcdb</ns5:incoming>
+        </sendTask>
+        <sequenceFlow sourceRef="modelio-37fc1106-37ee-47d1-8658-656c2b43b8fd" targetRef="modelio-8a185abc-5fd4-461f-a4c0-9f6f290e5f1e" name="f13" id="modelio-129a2bdc-fa32-4321-b084-c2253398dcdb"/>
+        <receiveTask implementation="##WebService" instantiate="false" isForCompensation="false" startQuantity="1" completionQuantity="1" name="Receive Notification" id="modelio-8271ec96-8074-4cfe-aacd-45ddb1c21d50">
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">f03e2559-f621-4d4b-baee-37173ab92962</ns5:outgoing>
+        </receiveTask>
+        <task isForCompensation="false" startQuantity="1" completionQuantity="1" name="View and Comment Notes and Skills" id="modelio-51f89366-7884-4a33-bced-dee9e40abcaf">
+            <ns5:incoming xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">f03e2559-f621-4d4b-baee-37173ab92962</ns5:incoming>
+            <ns5:outgoing xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="">f4ed5995-e08a-457c-a281-ab905d83fe1d</ns5:outgoing>
+        </task>
+        <sequenceFlow sourceRef="modelio-8271ec96-8074-4cfe-aacd-45ddb1c21d50" targetRef="modelio-51f89366-7884-4a33-bced-dee9e40abcaf" name="f14" id="f03e2559-f621-4d4b-baee-37173ab92962"/>
+        <sequenceFlow sourceRef="modelio-51f89366-7884-4a33-bced-dee9e40abcaf" targetRef="ee1e23bb-de5b-4844-9ded-c6397da741ed" name="f15" id="f4ed5995-e08a-457c-a281-ab905d83fe1d"/>
+    </process>
+    <ns4:BPMNDiagram name="New Employee Process" id="modelio-69b51f53-c1a5-435b-9072-f0f17478135a">
+        <ns4:BPMNPlane xmlns:ns5="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="" bpmnElement="modelio-4a97fcb6-e001-4123-8a91-af0eec9458de">
+            <ns4:BPMNShape isHorizontal="true" isExpanded="false" bpmnElement="f4fe753a-8ff7-49c8-8458-6841b802a216" id="f4fe753a-8ff7-49c8-8458-6841b802a216-gr">
+                <ns3:Bounds x="-42.0" y="9.0" width="803.0" height="199.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape isHorizontal="true" isExpanded="false" bpmnElement="f4b15724-95b3-43d5-8e1a-3cf2e562b791" id="f4b15724-95b3-43d5-8e1a-3cf2e562b791-gr">
+                <ns3:Bounds x="-42.0" y="208.0" width="803.0" height="151.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape isHorizontal="true" isExpanded="false" bpmnElement="modelio-52d4091f-7a81-4580-ac44-5e5925ec6e6f" id="modelio-52d4091f-7a81-4580-ac44-5e5925ec6e6f-gr">
+                <ns3:Bounds x="-42.0" y="359.0" width="803.0" height="138.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="modelio-56866118-8ef8-4f80-b3e3-4cd44b0b94dc" id="modelio-56866118-8ef8-4f80-b3e3-4cd44b0b94dc-gr">
+                <ns3:Bounds x="15.0" y="36.0" width="33.0" height="33.0"/>
+                <ns4:BPMNLabel labelStyle="5f118115-1872-4ad0-ae0f-d4032f4b5497">
+                    <ns3:Bounds x="-9.0" y="69.0" width="81.0" height="20.0"/>
+                </ns4:BPMNLabel>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="modelio-30ca5bfd-16f8-4f36-b1b5-a32be225a4aa" id="modelio-30ca5bfd-16f8-4f36-b1b5-a32be225a4aa-gr">
+                <ns3:Bounds x="250.0" y="20.0" width="90.0" height="46.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="ee1e23bb-de5b-4844-9ded-c6397da741ed" id="ee1e23bb-de5b-4844-9ded-c6397da741ed-gr">
+                <ns3:Bounds x="650.0" y="401.0" width="33.0" height="33.0"/>
+                <ns4:BPMNLabel labelStyle="5f118115-1872-4ad0-ae0f-d4032f4b5497">
+                    <ns3:Bounds x="655.0" y="434.0" width="22.0" height="20.0"/>
+                </ns4:BPMNLabel>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="modelio-5d59b7cb-edcd-4a8d-a035-dff1da8dc11f" id="modelio-5d59b7cb-edcd-4a8d-a035-dff1da8dc11f-gr">
+                <ns3:Bounds x="250.0" y="72.0" width="90.0" height="46.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="modelio-0a309e57-f49e-43a6-baa7-e477ffdbe3e3" id="modelio-0a309e57-f49e-43a6-baa7-e477ffdbe3e3-gr">
+                <ns3:Bounds x="250.0" y="130.0" width="90.0" height="46.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="modelio-02ea2c16-a579-4558-b2e8-9576e57a40a0" id="modelio-02ea2c16-a579-4558-b2e8-9576e57a40a0-gr">
+                <ns3:Bounds x="480.0" y="72.0" width="90.0" height="46.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="cc351220-17a4-4cd8-9e4d-bd226fc2ca16" id="cc351220-17a4-4cd8-9e4d-bd226fc2ca16-gr">
+                <ns3:Bounds x="385.0" y="65.0" width="40.0" height="40.0"/>
+                <ns4:BPMNLabel labelStyle="5f118115-1872-4ad0-ae0f-d4032f4b5497">
+                    <ns3:Bounds x="356.0" y="105.0" width="98.0" height="45.0"/>
+                </ns4:BPMNLabel>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="modelio-6e8d372d-f037-44e8-8d28-d07ad8d4510b" id="modelio-6e8d372d-f037-44e8-8d28-d07ad8d4510b-gr">
+                <ns3:Bounds x="140.0" y="36.0" width="40.0" height="40.0"/>
+                <ns4:BPMNLabel labelStyle="5f118115-1872-4ad0-ae0f-d4032f4b5497">
+                    <ns3:Bounds x="114.0" y="76.0" width="92.0" height="41.0"/>
+                </ns4:BPMNLabel>
+            </ns4:BPMNShape>
+            <ns4:BPMNEdge bpmnElement="c7e6bbf5-d74f-4976-ae27-0e6828747d72" id="c7e6bbf5-d74f-4976-ae27-0e6828747d72-gr">
+                <ns2:waypoint x="48.0" y="55.0"/>
+                <ns2:waypoint x="140.0" y="55.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="modelio-6a1294b5-6cf8-489a-884e-7745a58971d3" id="modelio-6a1294b5-6cf8-489a-884e-7745a58971d3-gr">
+                <ns2:waypoint x="180.0" y="46.0"/>
+                <ns2:waypoint x="250.0" y="46.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="modelio-017de478-6b4a-4aae-af65-c6772bca7acd" id="modelio-017de478-6b4a-4aae-af65-c6772bca7acd-gr">
+                <ns2:waypoint x="180.0" y="66.0"/>
+                <ns2:waypoint x="250.0" y="82.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="modelio-40040347-b464-4c0d-afca-2bd9ccfee1e4" id="modelio-40040347-b464-4c0d-afca-2bd9ccfee1e4-gr">
+                <ns2:waypoint x="170.0" y="76.0"/>
+                <ns2:waypoint x="170.0" y="140.0"/>
+                <ns2:waypoint x="204.0" y="140.0"/>
+                <ns2:waypoint x="204.0" y="130.0"/>
+                <ns2:waypoint x="250.0" y="140.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="modelio-66e39406-aef0-4ac9-b292-b3ae33c329ad" id="modelio-66e39406-aef0-4ac9-b292-b3ae33c329ad-gr">
+                <ns2:waypoint x="340.0" y="56.0"/>
+                <ns2:waypoint x="366.0" y="56.0"/>
+                <ns2:waypoint x="366.0" y="39.0"/>
+                <ns2:waypoint x="395.0" y="39.0"/>
+                <ns2:waypoint x="395.0" y="65.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="modelio-157ff346-36b4-4c80-bb41-fd4444bf9629" id="modelio-157ff346-36b4-4c80-bb41-fd4444bf9629-gr">
+                <ns2:waypoint x="340.0" y="85.0"/>
+                <ns2:waypoint x="385.0" y="85.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="modelio-53a0e352-fd5c-4112-85ec-69efab10ab2a" id="modelio-53a0e352-fd5c-4112-85ec-69efab10ab2a-gr">
+                <ns2:waypoint x="340.0" y="140.0"/>
+                <ns2:waypoint x="376.0" y="130.0"/>
+                <ns2:waypoint x="376.0" y="140.0"/>
+                <ns2:waypoint x="385.0" y="140.0"/>
+                <ns2:waypoint x="395.0" y="105.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="modelio-97ca2918-328c-475c-b176-59532674338e" id="modelio-97ca2918-328c-475c-b176-59532674338e-gr">
+                <ns2:waypoint x="425.0" y="95.0"/>
+                <ns2:waypoint x="480.0" y="95.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNShape bpmnElement="modelio-185763d4-ed9d-4751-9176-f62c61c5e3e2" id="modelio-185763d4-ed9d-4751-9176-f62c61c5e3e2-gr">
+                <ns3:Bounds x="10.0" y="253.0" width="117.0" height="67.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="ddecba6f-3bd3-4c88-a2ab-40080a683713" id="ddecba6f-3bd3-4c88-a2ab-40080a683713-gr">
+                <ns3:Bounds x="225.0" y="267.0" width="40.0" height="40.0"/>
+                <ns4:BPMNLabel labelStyle="5f118115-1872-4ad0-ae0f-d4032f4b5497">
+                    <ns3:Bounds x="199.0" y="307.0" width="92.0" height="38.0"/>
+                </ns4:BPMNLabel>
+            </ns4:BPMNShape>
+            <ns4:BPMNEdge bpmnElement="modelio-90a20b85-d353-4b38-92f4-93a3c71a0951" id="modelio-90a20b85-d353-4b38-92f4-93a3c71a0951-gr">
+                <ns2:waypoint x="127.0" y="294.0"/>
+                <ns2:waypoint x="225.0" y="294.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNShape bpmnElement="modelio-0afde822-ec1f-4a59-887c-9247c21f34c2" id="modelio-0afde822-ec1f-4a59-887c-9247c21f34c2-gr">
+                <ns3:Bounds x="295.0" y="230.0" width="90.0" height="46.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="modelio-0c41d9c6-b9ea-4f84-b158-cd976158ba05" id="modelio-0c41d9c6-b9ea-4f84-b158-cd976158ba05-gr">
+                <ns3:Bounds x="295.0" y="300.0" width="90.0" height="46.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNEdge bpmnElement="modelio-92888a86-e4dc-4d14-8e27-5aa2e289ea42" id="modelio-92888a86-e4dc-4d14-8e27-5aa2e289ea42-gr">
+                <ns2:waypoint x="265.0" y="277.0"/>
+                <ns2:waypoint x="295.0" y="266.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="fe8c028a-2493-452c-8a89-f576369b004b" id="fe8c028a-2493-452c-8a89-f576369b004b-gr">
+                <ns2:waypoint x="265.0" y="297.0"/>
+                <ns2:waypoint x="295.0" y="310.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNShape bpmnElement="modelio-37fc1106-37ee-47d1-8658-656c2b43b8fd" id="modelio-37fc1106-37ee-47d1-8658-656c2b43b8fd-gr">
+                <ns3:Bounds x="430.0" y="253.0" width="40.0" height="40.0"/>
+                <ns4:BPMNLabel labelStyle="5f118115-1872-4ad0-ae0f-d4032f4b5497">
+                    <ns3:Bounds x="401.0" y="293.0" width="98.0" height="20.0"/>
+                </ns4:BPMNLabel>
+            </ns4:BPMNShape>
+            <ns4:BPMNEdge bpmnElement="cc212148-fa61-4e51-82af-32c368da7e60" id="cc212148-fa61-4e51-82af-32c368da7e60-gr">
+                <ns2:waypoint x="385.0" y="266.0"/>
+                <ns2:waypoint x="430.0" y="266.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="modelio-2f3ed897-ea7c-4f9a-b55e-43494425335a" id="modelio-2f3ed897-ea7c-4f9a-b55e-43494425335a-gr">
+                <ns2:waypoint x="375.0" y="300.0"/>
+                <ns2:waypoint x="430.0" y="283.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNShape bpmnElement="modelio-8a185abc-5fd4-461f-a4c0-9f6f290e5f1e" id="modelio-8a185abc-5fd4-461f-a4c0-9f6f290e5f1e-gr">
+                <ns3:Bounds x="510.0" y="250.0" width="90.0" height="46.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNEdge bpmnElement="modelio-129a2bdc-fa32-4321-b084-c2253398dcdb" id="modelio-129a2bdc-fa32-4321-b084-c2253398dcdb-gr">
+                <ns2:waypoint x="470.0" y="275.0"/>
+                <ns2:waypoint x="510.0" y="275.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNShape bpmnElement="modelio-8271ec96-8074-4cfe-aacd-45ddb1c21d50" id="modelio-8271ec96-8074-4cfe-aacd-45ddb1c21d50-gr">
+                <ns3:Bounds x="20.0" y="395.0" width="90.0" height="46.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNShape bpmnElement="modelio-51f89366-7884-4a33-bced-dee9e40abcaf" id="modelio-51f89366-7884-4a33-bced-dee9e40abcaf-gr">
+                <ns3:Bounds x="300.0" y="392.0" width="126.0" height="52.0"/>
+            </ns4:BPMNShape>
+            <ns4:BPMNEdge bpmnElement="f03e2559-f621-4d4b-baee-37173ab92962" id="f03e2559-f621-4d4b-baee-37173ab92962-gr">
+                <ns2:waypoint x="110.0" y="413.0"/>
+                <ns2:waypoint x="300.0" y="413.0"/>
+            </ns4:BPMNEdge>
+            <ns4:BPMNEdge bpmnElement="f4ed5995-e08a-457c-a281-ab905d83fe1d" id="f4ed5995-e08a-457c-a281-ab905d83fe1d-gr">
+                <ns2:waypoint x="426.0" y="419.0"/>
+                <ns2:waypoint x="650.0" y="419.0"/>
+            </ns4:BPMNEdge>
+        </ns4:BPMNPlane>
+        <ns4:BPMNLabelStyle id="5f118115-1872-4ad0-ae0f-d4032f4b5497">
+            <ns3:Font name="Arial" size="9.0" isBold="false" isItalic="false"/>
+        </ns4:BPMNLabelStyle>
+    </ns4:BPMNDiagram>
+</definitions>

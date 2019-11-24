@@ -6,12 +6,17 @@
 
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="EmployeeManagement\" />
+    <Folder Include="HumanResourcesManagement\" />
+    <Folder Include="Authorization\" />
+    <Folder Include="PersonManagement\" />
     <Folder Include="AgenciesManagement\" />
-    <Folder Include="Settings\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.1" />
   </ItemGroup>
 

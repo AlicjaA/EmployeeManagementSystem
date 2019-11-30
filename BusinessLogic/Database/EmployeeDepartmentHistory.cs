@@ -12,7 +12,7 @@ namespace BusinessLogic
         public DateTime? EndDate { get; set; }
         public DateTime ModifiedDate { get; set; }
 
-        public virtual Employee1 BusinessEntity { get; set; }
+        public virtual Employee BusinessEntity { get; set; }
         public virtual Department Department { get; set; }
         public virtual Shift Shift { get; set; }
     }

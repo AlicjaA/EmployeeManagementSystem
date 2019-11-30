@@ -11,6 +11,6 @@ namespace BusinessLogic
         public byte PayFrequency { get; set; }
         public DateTime ModifiedDate { get; set; }
 
-        public virtual Employee1 BusinessEntity { get; set; }
+        public virtual Employee BusinessEntity { get; set; }
     }
 }

@@ -27,9 +27,7 @@ namespace BusinessLogic
         public virtual DbSet<Department> Department { get; set; }
         public virtual DbSet<EmailAddress> EmailAddress { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
-        public virtual DbSet<Employee1> Employee1 { get; set; }
         public virtual DbSet<EmployeeDepartmentHistory> EmployeeDepartmentHistory { get; set; }
-        public virtual DbSet<EmployeeDetails> EmployeeDetails { get; set; }
         public virtual DbSet<EmployeeNotes> EmployeeNotes { get; set; }
         public virtual DbSet<EmployeePayHistory> EmployeePayHistory { get; set; }
         public virtual DbSet<ErrorLog> ErrorLog { get; set; }
@@ -138,6 +136,8 @@ namespace BusinessLogic
 
             modelBuilder.Entity<Agency>(entity =>
             {
+                entity.ToTable("Agency", "Agencies");
+
                 entity.Property(e => e.AgencyName)
                     .IsRequired()
                     .HasMaxLength(500)
@@ -415,19 +415,6 @@ namespace BusinessLogic
 
             modelBuilder.Entity<Employee>(entity =>
             {
-                entity.Property(e => e.FirstName)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.LastName)
-                    .IsRequired()
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<Employee1>(entity =>
-            {
                 entity.HasKey(e => e.BusinessEntityId)
                     .HasName("PK_Employee_BusinessEntityID");
 
@@ -506,8 +493,8 @@ namespace BusinessLogic
                 entity.Property(e => e.VacationHours).HasComment("Number of available vacation hours.");
 
                 entity.HasOne(d => d.BusinessEntity)
-                    .WithOne(p => p.Employee1)
-                    .HasForeignKey<Employee1>(d => d.BusinessEntityId)
+                    .WithOne(p => p.Employee)
+                    .HasForeignKey<Employee>(d => d.BusinessEntityId)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
@@ -561,30 +548,12 @@ namespace BusinessLogic
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<EmployeeDetails>(entity =>
-            {
-                entity.HasKey(e => e.DetailsId)
-                    .HasName("PK__Employee__BAC8628CD1EC50A0");
-
-                entity.Property(e => e.DefaultActivity)
-                    .HasMaxLength(500)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.DismissDate).HasColumnType("date");
-
-                entity.Property(e => e.HireDate).HasColumnType("date");
-
-                entity.HasOne(d => d.Employee)
-                    .WithMany(p => p.EmployeeDetails)
-                    .HasForeignKey(d => d.EmployeeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EmployeeD__Emplo__4BAC3F29");
-            });
-
             modelBuilder.Entity<EmployeeNotes>(entity =>
             {
                 entity.HasKey(e => e.NoteId)
                     .HasName("PK__Employee__EACE355F3DDDF2F4");
+
+                entity.Property(e => e.BusinessEntityId).HasColumnName("BusinessEntityID");
 
                 entity.Property(e => e.Comment).IsUnicode(false);
 
@@ -596,11 +565,11 @@ namespace BusinessLogic
                     .IsRequired()
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.Employee)
+                entity.HasOne(d => d.BusinessEntity)
                     .WithMany(p => p.EmployeeNotes)
-                    .HasForeignKey(d => d.EmployeeId)
+                    .HasForeignKey(d => d.BusinessEntityId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EmployeeN__Emplo__5CD6CB2B");
+                    .HasConstraintName("FK_EmployeeNotes_Employee");
             });
 
             modelBuilder.Entity<EmployeePayHistory>(entity =>
@@ -872,13 +841,15 @@ namespace BusinessLogic
 
             modelBuilder.Entity<Range>(entity =>
             {
+                entity.ToTable("Range", "Agencies");
+
                 entity.Property(e => e.RangeId).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Agency)
                     .WithMany(p => p.Range)
                     .HasForeignKey(d => d.AgencyId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Range__AgencyId__6FE99F9F");
+                    .HasConstraintName("FK_Range_Agency");
             });
 
             modelBuilder.Entity<Shift>(entity =>

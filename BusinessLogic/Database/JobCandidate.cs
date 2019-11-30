@@ -10,6 +10,6 @@ namespace BusinessLogic
         public string Resume { get; set; }
         public DateTime ModifiedDate { get; set; }
 
-        public virtual Employee1 BusinessEntity { get; set; }
+        public virtual Employee BusinessEntity { get; set; }
     }
 }

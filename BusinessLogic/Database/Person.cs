@@ -27,7 +27,7 @@ namespace BusinessLogic
         public DateTime ModifiedDate { get; set; }
 
         public virtual BusinessEntity BusinessEntity { get; set; }
-        public virtual Employee1 Employee1 { get; set; }
+        public virtual Employee Employee { get; set; }
         public virtual Password Password { get; set; }
         public virtual ICollection<BusinessEntityContact> BusinessEntityContact { get; set; }
         public virtual ICollection<EmailAddress> EmailAddress { get; set; }

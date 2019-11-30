@@ -53,7 +53,7 @@ namespace BusinessLogic
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["EmployeeManagementSystemDataBase"].ConnectionString);
+                optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings[0].ConnectionString);
             }
         }
 

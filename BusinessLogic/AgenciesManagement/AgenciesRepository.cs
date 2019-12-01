@@ -17,7 +17,8 @@ namespace BusinessLogic.AgenciesManagement
 
         public void CreateAgency(Agency agency)
         {
-            using (var scope = new TransactionScope(TransactionScopeOption.Required))
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, 
+                new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
             {
                 dbContext.Agency.Add(agency);
                 dbContext.SaveChanges();

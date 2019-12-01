@@ -9,10 +9,10 @@ namespace BusinessLogic.Interfaces
     /// Repository for Agencies and Ranges Management. 
     /// Consists of CRUD operations.
     /// </summary>
-    interface IAgenciesRepository
+    public interface IAgenciesRepository<TDbContext> where TDbContext : DbContext
     {
-        DbContext dbContext { get; }
-        void CreateAgency();
+        TDbContext dbContext { get; }
+        void CreateAgency(Agency agency);
         void RemoveAgency(int agencyId);
         void RemoveAgency(Agency agency);
         void UpdateAgency(int agencyIdToUpdate, Agency agencyUpdated);
@@ -20,7 +20,7 @@ namespace BusinessLogic.Interfaces
         void DeleteAgency(int agencyId);
         void DeleteAgency(Agency agency);
 
-        void CreateRange();
+        void CreateRange(Range range);
         void RemoveRange(int rangeId);
         void RemoveRange(Range range);
         void UpdateRange(int rangeToUpdate, Range rangeUpdated);

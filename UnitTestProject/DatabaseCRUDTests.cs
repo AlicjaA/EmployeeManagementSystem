@@ -3,6 +3,8 @@ using BusinessLogic;
 using System;
 using System.Transactions;
 using System.Linq;
+using BusinessLogic.AgenciesManagement;
+using BusinessLogic.Interfaces;
 
 namespace UnitTestProject
 {
@@ -10,11 +12,13 @@ namespace UnitTestProject
     public class DatabaseCRUDTests
     {
         EmployeeManagementSystemContext dbContext;
+        IAgenciesRepository<EmployeeManagementSystemContext> agenciesRepository;
 
         [TestInitialize]
         public void Setup()
         {
             dbContext = new EmployeeManagementSystemContext();
+            agenciesRepository = new AgenciesRepository(dbContext);
         }
 
         [TestMethod]
@@ -38,6 +42,20 @@ namespace UnitTestProject
                 .Single(n => n.CreationDate == now);
 
             Assert.IsNotNull(note);
+        }
+
+        [TestMethod]
+        public void AddAgencyTest()
+        {
+            Agency agency = new Agency();
+            String agencyName = "Testowa";
+            agency.AgencyName = agencyName;
+
+            agenciesRepository.CreateAgency(agency);
+
+            var agencyCreated = agenciesRepository.dbContext.Agency.Single(a => a.AgencyName == agencyName);
+
+            Assert.IsNotNull(agencyCreated);
         }
     }
 }

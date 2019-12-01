@@ -1,6 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessLogic;
 using System;
+using System.Transactions;
+using System.Linq;
 
 namespace UnitTestProject
 {
@@ -18,15 +20,24 @@ namespace UnitTestProject
         [TestMethod]
         public void AddEmployeeNoteTest()
         {
-            EmployeeNotes noteToAdd = new EmployeeNotes();
-            noteToAdd.BusinessEntityId = 2;
-            noteToAdd.NoteText = "Test";
-            noteToAdd.CreationDate = DateTime.Now;
+            DateTime now = DateTime.Now;
+            using (var scope = new TransactionScope(TransactionScopeOption.Required))
+            {
+                EmployeeNotes noteToAdd = new EmployeeNotes();
+                noteToAdd.BusinessEntityId = 3;
+                noteToAdd.NoteText = "Test";
+                noteToAdd.CreationDate = now;
 
-            dbContext.EmployeeNotes.Add(noteToAdd);
-            dbContext.SaveChanges();
+                dbContext.EmployeeNotes.Add(noteToAdd);
+                dbContext.SaveChanges();
 
-            Assert.IsNotNull(dbContext.EmployeeNotes.Find(2).BusinessEntityId);
+                scope.Complete();
+            }
+
+            var note = dbContext.EmployeeNotes
+                .Single(n => n.CreationDate == now);
+
+            Assert.IsNotNull(note);
         }
     }
 }

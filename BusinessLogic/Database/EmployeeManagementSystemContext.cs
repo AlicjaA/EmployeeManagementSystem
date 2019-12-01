@@ -551,7 +551,7 @@ namespace BusinessLogic
             modelBuilder.Entity<EmployeeNotes>(entity =>
             {
                 entity.HasKey(e => e.NoteId)
-                    .HasName("PK__Employee__EACE355F7BC6623C");
+                    .HasName("PK__Employee__EACE355F644B4BB5");
 
                 entity.ToTable("EmployeeNotes", "HumanResources");
 
@@ -559,9 +559,9 @@ namespace BusinessLogic
 
                 entity.Property(e => e.Comment).IsUnicode(false);
 
-                entity.Property(e => e.CreationDate).HasColumnType("date");
+                entity.Property(e => e.CreationDate).HasColumnType("datetime");
 
-                entity.Property(e => e.ModifyDate).HasColumnType("date");
+                entity.Property(e => e.ModifyDate).HasColumnType("datetime");
 
                 entity.Property(e => e.NoteText)
                     .IsRequired()

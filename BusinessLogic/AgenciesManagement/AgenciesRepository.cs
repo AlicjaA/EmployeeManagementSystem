@@ -29,7 +29,14 @@ namespace BusinessLogic.AgenciesManagement
 
         public void CreateRange(Range range)
         {
-            throw new NotImplementedException();
+            using (var scope = new TransactionScope(TransactionScopeOption.Required,
+                new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
+            {
+                dbContext.Range.Add(range);
+                dbContext.SaveChanges();
+
+                scope.Complete();
+            }
         }
 
         public void DeleteAgency(int agencyId)

@@ -847,6 +847,8 @@ namespace BusinessLogic
 
                 entity.Property(e => e.RangeId).ValueGeneratedNever();
 
+                entity.Property(e => e.TotalRange).ValueGeneratedOnAdd();
+
                 entity.HasOne(d => d.Agency)
                     .WithMany(p => p.Range)
                     .HasForeignKey(d => d.AgencyId)

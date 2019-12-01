@@ -13,12 +13,14 @@ namespace UnitTestProject
     {
         EmployeeManagementSystemContext dbContext;
         IAgenciesRepository<EmployeeManagementSystemContext> agenciesRepository;
+        String agencyName;
 
         [TestInitialize]
         public void Setup()
         {
             dbContext = new EmployeeManagementSystemContext();
             agenciesRepository = new AgenciesRepository(dbContext);
+            agencyName = "Testowa";
         }
 
         [TestMethod]
@@ -48,7 +50,6 @@ namespace UnitTestProject
         public void AddAgencyTest()
         {
             Agency agency = new Agency();
-            String agencyName = "Testowa";
             agency.AgencyName = agencyName;
 
             agenciesRepository.CreateAgency(agency);
@@ -56,6 +57,17 @@ namespace UnitTestProject
             var agencyCreated = agenciesRepository.dbContext.Agency.Single(a => a.AgencyName == agencyName);
 
             Assert.IsNotNull(agencyCreated);
+        }
+
+        [TestMethod]
+        public void AddRangeTest()
+        {
+            BusinessLogic.Range range = new BusinessLogic.Range();
+            range.AgencyId = agenciesRepository.dbContext.Agency.Single(a => a.AgencyName == agencyName).AgencyId;
+            range.RangeFrom = 1;
+            range.RangeTo = 10;
+
+            agenciesRepository.CreateRange(range);
         }
     }
 }

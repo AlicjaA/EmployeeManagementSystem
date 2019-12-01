@@ -69,5 +69,23 @@ namespace UnitTestProject
 
             agenciesRepository.CreateRange(range);
         }
+
+        [TestMethod]
+        public void DeleteRangeById()
+        {
+            var agencyCreated = agenciesRepository.dbContext.Agency.Single(a => a.AgencyName == agencyName);
+            var rangeCreated = agenciesRepository.dbContext.Range.Single(r => r.AgencyId == agencyCreated.AgencyId);
+
+            agenciesRepository.DeleteRange(rangeCreated.RangeId);
+        }
+
+
+        [TestMethod]
+        public void DeleteAgencyById()
+        {
+            var agencyCreated = agenciesRepository.dbContext.Agency.Single(a => a.AgencyName == agencyName);
+
+            agenciesRepository.DeleteAgency(agencyCreated.AgencyId);
+        }
     }
 }

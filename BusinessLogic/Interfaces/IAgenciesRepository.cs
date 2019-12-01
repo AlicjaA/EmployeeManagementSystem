@@ -13,16 +13,16 @@ namespace BusinessLogic.Interfaces
     {
         TDbContext dbContext { get; }
         void CreateAgency(Agency agency);
-        void RemoveAgency(int agencyId);
-        void RemoveAgency(Agency agency);
+        void ReadAgency(int agencyId);
+        void ReadAgency(Agency agency);
         void UpdateAgency(int agencyIdToUpdate, Agency agencyUpdated);
         void UpdateAgency(Agency agencyToUpdate, Agency agencyUpdated);
         void DeleteAgency(int agencyId);
         void DeleteAgency(Agency agency);
 
         void CreateRange(Range range);
-        void RemoveRange(int rangeId);
-        void RemoveRange(Range range);
+        void ReadRange(int rangeId);
+        void ReadRange(Range range);
         void UpdateRange(int rangeToUpdate, Range rangeUpdated);
         void UpdateRange(Range rangeToUpdate, Range rangeUpdated);
         void DeleteRange(int rangeId);

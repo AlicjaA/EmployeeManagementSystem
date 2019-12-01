@@ -41,25 +41,55 @@ namespace BusinessLogic.AgenciesManagement
 
         public void DeleteAgency(int agencyId)
         {
-            throw new NotImplementedException();
+            using (var scope = new TransactionScope(TransactionScopeOption.Required,
+                 new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
+            {
+                Agency toRemove = dbContext.Agency.Find(agencyId);
+                dbContext.Agency.Remove(toRemove);
+                dbContext.SaveChanges();
+
+                scope.Complete();
+            }
         }
 
         public void DeleteAgency(Agency agency)
         {
-            throw new NotImplementedException();
+            using (var scope = new TransactionScope(TransactionScopeOption.Required,
+                 new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
+            {
+                dbContext.Agency.Remove(agency);
+                dbContext.SaveChanges();
+
+                scope.Complete();
+            }
         }
 
         public void DeleteRange(int rangeId)
         {
-            throw new NotImplementedException();
+            using (var scope = new TransactionScope(TransactionScopeOption.Required,
+                 new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
+            {
+                Range toRemove = dbContext.Range.Find(rangeId);
+                dbContext.Range.Remove(toRemove);
+                dbContext.SaveChanges();
+
+                scope.Complete();
+            }
         }
 
         public void DeleteRange(Range range)
         {
-            throw new NotImplementedException();
+            using (var scope = new TransactionScope(TransactionScopeOption.Required,
+                 new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
+            {
+                dbContext.Range.Remove(range);
+                dbContext.SaveChanges();
+
+                scope.Complete();
+            }
         }
 
-        public void RemoveAgency(int agencyId)
+        public void ReadAgency(int agencyId)
         {
             throw new NotImplementedException();
         }
@@ -69,12 +99,12 @@ namespace BusinessLogic.AgenciesManagement
             throw new NotImplementedException();
         }
 
-        public void RemoveRange(int rangeId)
+        public void ReadRange(int rangeId)
         {
             throw new NotImplementedException();
         }
 
-        public void RemoveRange(Range range)
+        public void ReadRange(Range range)
         {
             throw new NotImplementedException();
         }

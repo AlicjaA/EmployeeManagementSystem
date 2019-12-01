@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -53,7 +52,8 @@ namespace BusinessLogic
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings[0].ConnectionString);
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("data source=localhost;initial catalog=EmployeeManagementSystem;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
             }
         }
 
@@ -551,7 +551,9 @@ namespace BusinessLogic
             modelBuilder.Entity<EmployeeNotes>(entity =>
             {
                 entity.HasKey(e => e.NoteId)
-                    .HasName("PK__Employee__EACE355F3DDDF2F4");
+                    .HasName("PK__Employee__EACE355F7BC6623C");
+
+                entity.ToTable("EmployeeNotes", "HumanResources");
 
                 entity.Property(e => e.BusinessEntityId).HasColumnName("BusinessEntityID");
 

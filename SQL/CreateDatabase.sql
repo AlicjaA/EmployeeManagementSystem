@@ -1,4 +1,5 @@
 USE [master]
+--DROP DATABASE EmployeeManagementSystem
 GO
 
 /****** Object:  Database [EmployeeManagementSystem]    Script Date: 24.11.2019 09:42:30 ******/
@@ -111,5 +112,3 @@ GO
 
 ALTER DATABASE [EmployeeManagementSystem] SET  READ_WRITE 
 GO
-
-

@@ -12,8 +12,8 @@ CREATE TABLE [HumanResources].[EmployeeNotes](
 	[NoteId] [int] IDENTITY(1,1) NOT NULL,
 	[BusinessEntityID] [int] NOT NULL,
 	[NoteText] [varchar](max) NOT NULL,
-	[CreationDate] [date] NOT NULL,
-	[ModifyDate] [date] NULL,
+	[CreationDate] [datetime] NOT NULL,
+	[ModifyDate] [datetime] NULL,
 	[Comment] [varchar](max) NULL,
 PRIMARY KEY CLUSTERED 
 (

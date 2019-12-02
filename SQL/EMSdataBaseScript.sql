@@ -10,7 +10,7 @@
 
 USE [master]
 
---DROP DATABASE EmployeeManagementSystem
+DROP DATABASE EmployeeManagementSystem
 GO
 
 /****** Object:  Database [EmployeeManagementSystem]    Script Date: 24.11.2019 09:42:30 ******/
@@ -126,6 +126,20 @@ GO
 
 USE [EmployeeManagementSystem]
 GO
+
+
+GO
+/****** Object:  UserDefinedDataType [dbo].[Name]    Script Date: 30.11.2019 20:24:09 ******/
+CREATE TYPE [dbo].[Name] FROM [nvarchar](50) NULL
+GO
+
+GO
+/****** Object:  UserDefinedDataType [dbo].[NameStyle]    Script Date: 30.11.2019 20:24:09 ******/
+CREATE TYPE [dbo].[NameStyle] FROM [bit] NOT NULL
+GO
+
+
+
 /****** Object:  Table [Person].[Person]    Script Date: 30.11.2019 20:24:09 ******/
 SET ANSI_NULLS ON
 GO

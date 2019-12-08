@@ -845,9 +845,7 @@ namespace BusinessLogic
             {
                 entity.ToTable("Range", "Agencies");
 
-                entity.Property(e => e.RangeId).ValueGeneratedNever();
-
-                entity.Property(e => e.TotalRange).ValueGeneratedOnAdd();
+                entity.Property(e => e.RangeId).ValueGeneratedOnAdd();
 
                 entity.HasOne(d => d.Agency)
                     .WithMany(p => p.Range)

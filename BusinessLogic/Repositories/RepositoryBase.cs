@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace BusinessLogic.Repositories
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
+    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         private readonly EmployeeManagementSystemContext _dbContext;
 
@@ -38,7 +38,7 @@ namespace BusinessLogic.Repositories
             _dbContext.SaveChanges();
         }
 
-        public void Edit(T entity)
+        public virtual void Edit(T entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
             _dbContext.SaveChanges();

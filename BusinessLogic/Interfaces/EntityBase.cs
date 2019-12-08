@@ -4,9 +4,8 @@ using System.Text;
 
 namespace BusinessLogic.Interfaces
 {
-    public interface IEntityBase
+    public abstract class EntityBase
     {
         public int Id { get; protected set; }
-
     }
 }

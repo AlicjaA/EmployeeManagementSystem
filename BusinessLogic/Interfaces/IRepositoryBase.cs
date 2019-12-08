@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 namespace BusinessLogic.Interfaces
 {
 
-    public interface IRepositoryBase<T> where T : IEntityBase
+    public interface IRepositoryBase<T> where T : EntityBase
     {
         T GetById(int id);
         IEnumerable<T> List();
